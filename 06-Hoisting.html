@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // Hoisting
+      // 预解析 （变量预解析 和 函数预解析）
+      // 也称 变量的提升 和 函数的提升 (moving declarations to the top)
+      // 预解析：在代码执行之前，先要预解析（先要把代码扫描一遍，把变量和函数提前抓取出来，存到当前作用域的最前面）
+
+      // 此现象为 预解析
+      console.log(n) // 不报错，而是打印 undefined
+      var n = 2
+
+      fn() // 不报错，而是打印 JavaScript Hoisting
+      function fn() {
+        console.log('JavaScript Hoisting')
+      }
+    </script>
+  </body>
+</html>

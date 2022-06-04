@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //  var let const
+
+      // var 声明的变量不具有块级作用域，let具有块级作用域。
+      // var 声明的变量，可以重新定义，let不可以重新定义。
+      // var 声明的变量，相当于window添加属性，let直接就是变量。
+      // var 和 let 都可以只定义不赋值，结果就是undefined。
+      // const 声明的变量不准改值，必须赋值，成为常量，其他的与let没区别。
+      // const 声明的常量，不准改值
+      // const 声明的常量，必须赋值
+      // const 建议：
+      //  1.const 常量名，全部纯大写。
+      //  2. 一般固定不变的值使用常量。
+
+      // var:
+      {
+        var n = 3
+      }
+      console.log(n) //3
+      ///////////////////////////////////////////////////
+      var x = 2
+      var x = 3
+      console.log(x) //3
+      ///////////////////////////////////////////////////
+      var a = 8
+      console.log(window) // window里有a的属性
+
+      // let:
+      {
+        let m = 4
+      }
+      console.log(m) // m is not defined
+      ///////////////////////////////////////////////////
+      // let y = 4
+      // let y = 4
+      // console.log(y) // 'y' has already been declared
+    </script>
+  </body>
+</html>

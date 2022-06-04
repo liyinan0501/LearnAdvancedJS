@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // Scope
+      // 作用域
+      // 变量的使用范围
+
+      // 全局作用域：
+      // 函数外面的作用域，在全局作用域定义的变量叫全局变量，可以再任何地方使用。
+      let m = 5 // 全局变量
+      function fn1() {
+        console.log(m) // 5
+      }
+      fn1()
+
+      // 局部作用域(函数作用域)：
+      // 函数内部的作用域，在局部作用域定义的变量叫局部变量，只能在当前函数中使用。
+      // 在函数执行完毕之后会关闭作用域空间，同时会销毁局部变量。
+      // 形参相当于局部变量
+
+      // 块级作用域：
+      // 用{}包起来的代码块，就是块级作用域。
+      // {}里声明的变量等价于局部变量，只能在当前块级作用域中使用。（var声明的变量除外）
+      {
+        var x = 3
+        let y = 4
+      }
+      console.log(x) // 3
+      console.log(y) // y is not defined
+
+      // 变量：全局变量、局部变量
+      // 函数每次执行都会开辟新的内存空间，当函数执行完毕后，就会关闭这块空间，
+      // 并且里面的一些变量都会销毁
+      function fn2() {
+        // 如果就写n=3 忽略let，就是全局变量
+        var n = 3
+      }
+      fn2()
+      console.log(n) // n is not defined
+    </script>
+  </body>
+</html>

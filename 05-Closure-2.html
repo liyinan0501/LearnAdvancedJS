@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Closure-2
+      // 闭包：一个作用域有权访问另外一个作用域的局部变量。
+      //    （子函数访问父函数的局部变量）
+      // 语法：子函数访问父函数的局部变量，并返回子函数。
+      // 作用：延伸变量的使用范围或者说使用周期。
+      // 缺点：过度使用闭包可能造成内存泄露。
+
+      //   function fn(a) {
+      //     console.log(a)
+      //     a() // 123
+      //   }
+      //   fn(function () {
+      //     console.log(123)
+      //   })
+
+      // 回调函数也能访问函数内部的局部变量
+      function fn(a) {
+        let num = 123
+        a(num)
+      }
+      fn(function (n) {
+        console.log(n) // 123
+      })
+    </script>
+  </body>
+</html>
