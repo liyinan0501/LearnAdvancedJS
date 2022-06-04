@@ -9,8 +9,14 @@
   </head>
   <body>
     <script>
-      var a
-      console.log(a)
+      // let Variable Hoisting
+      // let 有预解析，没有初始化之前不让使用。
+      function fn() {
+        console.log(n) // Cannot access 'n' before initialization
+        let n = 2
+      }
+      fn()
+      console.log(m) // m is not defined
     </script>
   </body>
 </html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      /*
+       全局解析：
+       var n 
+       
+       function fn() {
+         局部解析：
+         var n
+
+         console.log(n) // undefined
+         var n = 6
+       }
+       
+      */
+
+      console.log(n) // undefined
+      fn()
+      var n = 3
+      function fn() {
+        console.log(n) // undefined
+        var n = 6
+      }
+      /////////////////////////////////////////////
+      /*
+      全局解析：
+      a = 函数
+      a = 2
+      */
+
+      console.log(a) // 打印函数 function a() {}
+      function a() {}
+      var a = 2
+      console.log(a) // 2
+      /////////////////////////////////////////////
+
+      var b = 25
+      function abc() {
+        console.log(b) // undefined
+        var b = 10
+      }
+      abc()
+
+      /////////////////////////////////////////////
+
+      console.log(c) // 打印函数 function c() { console.log('aa') }
+      function c() {
+        console.log('aa')
+      }
+      var c = 1
+      console.log(c) // 1
+
+      /////////////////////////////////////////////
+
+      var num = 10
+      fun()
+      function fun() {
+        console.log(num) // undefined
+        var num = 20
+      }
+
+      /////////////////////////////////////////////
+      /* 预解析：
+        function f1() {
+          var y = 9
+          console.log(x)
+          console.log(y)
+          var x = 123
+        }
+        var x
+      */
+
+      var x = 18
+      f1()
+      function f1() {
+        var y = 9
+        console.log(x) // undefined
+        console.log(y) // 9
+        var x = 123
+      }
+    </script>
+  </body>
+</html>
