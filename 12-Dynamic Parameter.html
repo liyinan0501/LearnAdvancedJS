@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // Dynamic Parameter
+      console.log(1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+      // Dynamic Parameter 1
+      console.log('------------------------------------------------------')
+
+      function fn() {
+        // 函数内部有一个特殊对象 arguments
+        // arguments 用于接收所有形参, 返回一个伪数组。
+        console.log(arguments)
+        for (let i = 0; i < arguments.length; i++) {
+          console.log(arguments[i])
+        }
+      }
+      fn(1, 2, 3)
+
+      console.log('------------------------------------------------------')
+
+      function getMax() {
+        let max = arguments[0]
+        for (let i = 0; i < arguments.length; i++) {
+          max = arguments[i] > max ? arguments[i] : max
+        }
+        return max
+      }
+      console.log(getMax(3, 8, 9, 2, 3, 6, 12))
+
+      console.log('------------------------------------------------------')
+
+      // Dynamic Parameter 2
+
+      // 用 undefined 占位
+      // 用 ... 接受剩余实参，只能放到最后的位置。
+      function fun(a, b, ...c) {
+        console.log(a) // undefined
+        console.log(b) // 2
+        console.log(c) // [3, 4, 5, 6]
+      }
+      fun(undefined, 2, 3, 4, 5, 6)
+
+      console.log('------------------------------------------------------')
+
+      function fun1(...a) {
+        console.log(a) // [undefined, 2, 3, 4, 5, 6]
+      }
+      fun1(undefined, 2, 3, 4, 5, 6)
+
+      console.log('------------------------------------------------------')
+
+      function getSum(...num) {
+        let sum = 0
+        for (let i = 0; i < num.length; i++) {
+          sum += num[i]
+        }
+        return sum
+      }
+      console.log(getSum(8, 4, 2, 3, 3))
+
+      console.log('------------------------------------------------------')
+    </script>
+  </body>
+</html>
