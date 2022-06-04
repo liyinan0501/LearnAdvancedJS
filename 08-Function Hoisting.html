@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // 内存 （解析）：
+      // function fn1() {
+      //   console.log(1)
+      // }
+      // function fn2() {
+      //   console.log(2)
+      // }
+      // 只解析，不调用。
+
+      // Hoisting - Function Hoisting
+      // - 函数预解析 (函数的提升)
+      // 函数预解析：在代码执行之前，先要预解析。
+      //（先要把代码扫描一遍，把具有名字的函数提前抓取出来，提升到当前作用域的最前面，但是只定义，不调用）
+      // 任何一个作用域，在执行之前都要先预解析。
+
+      // 预解析函数优先
+
+      fn1() // 不会被解析
+      fn2() // 不会被解析
+      // 会被解析
+      function fn1() {
+        console.log(1)
+      }
+      // 会被解析
+      function fn2() {
+        console.log(2)
+      }
+      // 不会被解析
+      ;(function fn3() {
+        console.log(3)
+      })()
+
+      var fn = function () {} // 这种情况只解析声明变量，不会解析函数，同样匿名函数也不会被解析。
+    </script>
+  </body>
+</html>
