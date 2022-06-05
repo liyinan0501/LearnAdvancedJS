@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // Constructor
+      // 自定义构造函数
+      // 建议：所有的构造函数的首字母大写
+
+      // function Person() {}
+      // 如何使用：
+      // new 出来的对象是实例化对象
+      // let obj = new Person()
+      // console.log(obj) // Person{}
+
+      // 自定义构造函数可以设置模板
+      // 构造函数里面 this 指向当前实例对象
+      function Person(name, age, sex) {
+        ;(this.name = name),
+          (this.age = age),
+          (this.sex = sex),
+          (this.eat = function () {
+            console.log('eating')
+          }),
+          (this.fly = function () {
+            console.log('flying')
+          })
+      }
+
+      let p1 = new Person('Tom', 18, 'male')
+      console.log(p1)
+
+      let p2 = new Person('Joe', 20, 'Female')
+      console.log(p2)
+    </script>
+  </body>
+</html>

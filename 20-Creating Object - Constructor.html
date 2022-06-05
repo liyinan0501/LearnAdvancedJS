@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // Creating Object - Constructor
+      // 2.构造函数创建对象
+
+      // 构造函数：也是函数，只不过构造函数一般用于和 new 搭配使用，来创建对象。
+
+      // 内置构造函数：Object，用来创建对象的构造函数。
+      let obj = new Object()
+      console.log(obj) // {} 空对象
+      // 添加属性：
+      obj.uname = 'Tom'
+      obj.age = 22
+      console.log(obj)
+      // 更改属性值：
+      obj.uname = 'Joe'
+      console.log(obj)
+      // 添加方法：
+      obj.fly = function () {
+        console.log('flying')
+      }
+      obj.eat = function () {
+        console.log('eating')
+      }
+      console.log(obj)
+
+      // new 时候直接添加属性和方法
+      let obj1 = new Object({ uname: 'Rose', age: 18, sex: 'female' })
+      console.log(obj1)
+
+      // 如果构函数不需要参数，可以省略小括号
+      // let obj2 = new Object
+      // console.log(obj2) // {} 空对象
+
+      // new Date()
+    </script>
+  </body>
+</html>
