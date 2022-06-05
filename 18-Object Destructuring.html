@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // Object Destructuring
+      // 把对象解开赋值给变量
+
+      let obj = {
+        uname: 'Jack',
+        age: 22,
+        sex: 'male',
+        score: 98,
+        index: 6,
+      }
+      // 无解构取值：
+      console.log(obj.score) // 98
+
+      // 解构赋值：
+      // 解构对象把变量名放到{}里
+      // 把属性名当做变量名即可 - 要取谁就把谁的属性当做变量名，无顺序。
+      let { uname, sex, abc } = obj
+      console.log(uname, sex, abc) // Jack male undefined
+
+      // 如果对象里属性名和全局或者外面的变量名冲突，可以用 : 进行再命名。
+      let { uname: userName, age } = {
+        uname: 'Tom',
+        age: 14,
+        sex: 'Female',
+        score: 100,
+        index: 01,
+      }
+      console.log(userName, age) // Tom 14
+
+      // 复杂情况：
+      let {
+        dog: { name },
+      } = {
+        name: 'Mikki',
+        dog: {
+          name: 'Pluto',
+          age: 1,
+        },
+        age: 10,
+        sex: 'male',
+        score: 101,
+        index: 00,
+      }
+      console.log(name) // Pluto
+
+      // 作用：
+      function person({ uname, age, sex }) {
+        // 接收对象，直接进行解构。
+        console.log(`My name is ${uname}, and ${age} years old ${sex}.`)
+        //My name is Rose, and 18 years old Female.
+      }
+      person({ uname: 'Rose', age: 18, sex: 'Female' })
+    </script>
+  </body>
+</html>

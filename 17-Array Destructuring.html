@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // Array Destructuring
+
+      let arr = ['Jack', 'Tom', 'Joe', 'Luis', 'Rose', 'John']
+      // 无解构赋值：
+      // let name1 = arr[0]
+      // let name2 = arr[1]
+      // let name3 = arr[2]
+      // let name4 = arr[3]
+      // let name5 = arr[4]
+      // let name6 = arr[5]
+
+      // 解构赋值：解开数据解构，赋值给变量
+      // 解构数组把变量名放到[]里
+      // 一一对应，进行赋值。
+      // let [name1, name2, name3, name4, name5, name7] = ['Jack', 'Tom', 'Joe', 'Luis', 'Rose', 'John']
+      // let [name1, name2, name3, name4, name5, name7] = arr
+      // console.log(name1, name2, name3, name4, name5, name7)
+
+      // 情况：
+      // 1. 变量多值少:
+      // let [name1, name2, name3, name4, name5, name7, name8, name9] = [
+      //   'Jack',
+      //   'Tom',
+      //   'Joe',
+      //   'Luis',
+      //   'Rose',
+      //   'John',
+      // ]
+      // console.log(name1, name2, name3, name4, name5, name7, name8, name9)
+      // Jack Tom Joe Luis Rose John undefined undefined
+
+      // 2. 变量少值多
+      // let [name1, name2, name3] = ['Jack', 'Tom', 'Joe', 'Luis', 'Rose', 'John']
+      // console.log(name1, name2, name3)
+      // Jack Tom Joe
+
+      // 3. 按需取值
+      // 用 , 号占位
+      // let [, , name1, name2, , name3] = [
+      //   'Jack',
+      //   'Tom',
+      //   'Joe',
+      //   'Luis',
+      //   'Rose',
+      //   'John',
+      // ]
+      // console.log(name1, name2, name3)
+      // Joe Luis John
+
+      // 用 ... 做剩余取法，... 只能用在末尾。
+      // let [, name1, name2, ...name3] = [
+      //   'Jack',
+      //   'Tom',
+      //   'Joe',
+      //   'Luis',
+      //   'Rose',
+      //   'John',
+      // ]
+      // console.log(name1, name2, name3)
+      // Tom Joe (3) ['Luis', 'Rose', 'John']
+
+      // 复杂情况：
+      let [, , name1, name2, [, name3, name4]] = [
+        'Jack',
+        'Tom',
+        'Joe',
+        'Luis',
+        ['Miki', 'Minnie', 'Duck', 'Pluto'],
+      ]
+      console.log(name1, name2, name3, name4)
+      // Joe Luis Minnie Duck
+    </script>
+  </body>
+</html>
