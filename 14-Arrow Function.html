@@ -8,83 +8,23 @@
     <style></style>
   </head>
   <body>
-    <input type="button" value="click" />
     <script>
-      // Arrow Function Usage
-
-      // window.setInterval(() => {
-      //   console.log(new Date().toLocaleString())
-      // }, 1000)
-
-      // ;[2, 3, 4, 5, 6].forEach((element) => {
-      //   console.log(element)
-      // })
-
-      // 1. 箭头函数不存在预解析，必须先定义后调用
-      let fn = () => {
-        console.log('aaa') // aaa
+      // Arrow Function
+      let fn = (a, b) => {
+        return a + b
       }
-      fn()
+      let sum = fn(1, 2)
+      console.log(sum)
 
-      // 2. 箭头函数中，不存在arguments
-      // let fn1 = () => {
-      //   console.log(arguments) // arguments is not defined
+      // 1. 如果参数只有一个，小括号可以省略不写
+      // let fn1 = a => {
+      //   return a * a
       // }
-      // fn1(1, 2, 3)
+      // console.log(fn1(3))
 
-      let fn2 = (...a) => {
-        console.log(a) //[1,2,3]
-      }
-      fn2(1, 2, 3)
-
-      // 3. 箭头函数中，不存在this，箭头函数中的this指向的是上级作用域的this
-      // 同理：箭头函数中的this指向箭头函数所在作用域的this
-      // 如果涉及到this使用的时候，尽量不要使用箭头函数，因为箭头函数中this指向不明确。
-      // 例如 点击事件处理函数
-
-      let fn4 = () => {
-        console.log(this) // window
-      }
-      fn4()
-
-      let obj = {
-        uname: 'jack',
-        age: 22,
-        fly: function () {
-          // 因为以下箭头函数没有this，会指向上级作用域这里的this
-          window.setInterval(() => {
-            console.log(this) // {uname: 'jack', age: 22, fly: ƒ}
-          }, 1000)
-        },
-      }
-      obj.fly()
-
-      let btn = document.querySelector('input')
-      // btn.addEventListener('click', function () {
-      //   this.style.color = 'red'
-      // })
-      btn.addEventListener('click', () => {
-        this.style.color = 'red' // 给window加了，不好使。
-      })
-
-      // this 指向问题：
-      // window.setInterval(function () {
-      //   console.log(this) // window
-      // }, 1000)
-
-      // function fn3() {
-      //   console.log(this) // window
-      // }
-      // fn3()
-
-      // let obj = {
-      //   uname: 'jack',
-      //   age: 22,
-      //   fly: function () {
-      //     console.log(this) //{uname: 'jack', age: 22, fly: ƒ}
-      //   },
-      // }
-      // obj.fly()
+      // 2. 如果函数体只有一行代码，那么可以省略大括号，之后会自动的返回结果，从而不需要写return
+      // let fn2 = a => a * a
+      // console.log(fn2(4))
     </script>
   </body>
 </html>
