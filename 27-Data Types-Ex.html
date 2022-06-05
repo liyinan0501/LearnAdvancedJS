@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      let n = 10
+      let m = 11
+      function fn(a, b) {
+        a = 100
+        b = 200
+        return [a, b]
+      }
+      console.log(fn(n, m)) // [100, 200]
+      console.log(n, m) // 10, 11
+
+      // 对象是复杂类型数据，直接会把o的地址复制到obj上，所以obj的uname改了，o的uname也会被更改，他们使用同一个内存地址。
+      let o = { uname: 'Jack', age: 22 }
+      function fn1(obj) {
+        obj.uname = 'Tom'
+      }
+      fn1(o)
+      console.log(o) // {uname: 'Tom', age: 22}
+
+      // 如上数组也是复杂数据类型，使用相同地址。
+      let arr = ['John', 'Rose']
+      function fn2(ary) {
+        ary[0] = 'Jim'
+      }
+      fn2(arr)
+      console.log(arr) // ['Jim', 'Rose']
+    </script>
+  </body>
+</html>

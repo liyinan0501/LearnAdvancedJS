@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // Data Types
+      // 数据类型
+      // 主要数据类型6种：
+      // string, number, boolean, undefined, null, object
+      // 简单数据类型：string, number, boolean, undefined, null
+      // 复杂数据类型（引用类型）：对象（数组）
+
+      // 把变量传递给另外一个变量，称为数据传递。
+      // 值传递 value transfer：会把数据复制一份传递 （简单数据类型）
+      // 引用传递 reference transfer：会把数据地址复制一份传递 （复杂数据类型）
+
+      // 简单数据类型，会在stack内存中开辟一个空间存放3，n有一个内存地址直接指向数据3。
+      let n = 3
+      let m = n // 值传递：会在stack内存中复制一份数据，m 又指向到这个新复制的数据。
+      console.log(n, m) // 3 3
+      n = 6
+      console.log(n, m) // 6 3
+
+      // 复杂数据类型，会在heap内存中开辟一个空间存入数据uname:'Tom'...，
+      // 又在stack内存中开辟一个空间存放数据在heap内存中的地址，这个地址指向heap中的数据，地址在stack中存下来了。
+      // obj 指向的是在stack内存中的地址，然后这个存在stack中的地址指向的是heap中的数据。
+      let obj = {
+        uname: 'Tom',
+        age: 22,
+        sex: 'male',
+      }
+      let o = obj // 引用传递：会在stack内存中复制一份地址，o 又指向到这个新地址，数据始终只有一份在heap内存中。
+      console.log(obj, o) // {uname: 'Tom', age: 22, sex: 'male'} {uname: 'Tom', age: 22, sex: 'male'}
+      obj.uname = 'Rose'
+      console.log(obj, o) // {uname: 'Rose', age: 22, sex: 'male'} {uname: 'Rose', age: 22, sex: 'male'}
+    </script>
+  </body>
+</html>
