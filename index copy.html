@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // Hoisting-Ex2
+      /* 
+        b = 9
+        c = 9
+        function f1() {
+          //var a, 
+
+          var a = (b = c = 9) // var a = 9; b = 9; c = 9
+          console.log(a) //9
+          console.log(b) //9
+          console.log(c) //9
+        }
+      */
+      f1()
+      console.log(c) //9
+      console.log(b) //9
+      console.log(a) //a is not defined
+      function f1() {
+        var a = (b = c = 9) // var a = 9; b = 9; c = 9
+        console.log(a) //9
+        console.log(b) //9
+        console.log(c) //9
+      }
+    </script>
+  </body>
+</html>
