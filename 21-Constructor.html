@@ -22,15 +22,15 @@
       // 自定义构造函数可以设置模板
       // 构造函数里面 this 指向当前实例对象
       function Person(name, age, sex) {
-        ;(this.name = name),
-          (this.age = age),
-          (this.sex = sex),
-          (this.eat = function () {
-            console.log('eating')
-          }),
-          (this.fly = function () {
-            console.log('flying')
-          })
+        this.name = name
+        this.age = age
+        this.sex = sex
+        this.eat = function () {
+          console.log('eating')
+        }
+        this.fly = function () {
+          console.log('flying')
+        }
       }
 
       let p1 = new Person('Tom', 18, 'male')

@@ -10,7 +10,8 @@
   <body>
     <script>
       function Pet(name, owner) {
-        ;(this.name = name), (this.owner = owner)
+        this.name = name
+        this.owner = owner
         this.eat = function () {
           console.log('eating')
         }
@@ -22,12 +23,12 @@
       dog1.eat()
 
       function Person(name, age, sex) {
-        ;(this.name = name),
-          (this.age = age),
-          (this.sex = sex),
-          (this.walk = function () {
-            console.log('walking')
-          })
+        this.name = name
+        this.age = age
+        this.sex = sex
+        this.walk = function () {
+          console.log('walking')
+        }
       }
       let p1 = new Person('Mike', 34, 'Female')
       console.log(p1)

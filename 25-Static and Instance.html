@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // Static and Instance
+
+      // Static Properties and Static Methods
+      // 静态属性和静态方法
+      // Instance Properties and Instance Methods
+      // 实例属性和实例方法
+
+      // 对象是由属性和方法组成的
+      function Star(uname, age) {
+        // 实例属性和实例方法：
+        this.uname = uname
+        this.age = age
+        this.act = function () {
+          console.log('acting')
+        }
+      }
+
+      let p1 = new Star('Nicolas Cage', 55)
+      // console.log(p1) // Star {name: 'Nicolas Cage', age: 55, act: ƒ}
+
+      // Start 构造函数也属于对象，对象身上就可以添加属性和方法
+      // 静态属性和静态方法：
+      Star.language = 'English'
+      Star.skin = 'White'
+      Star.eat = function () {
+        console.log('eating')
+      }
+      // 如上 Star.language 等，是在构造函数身上直接添加的成员，称为静态成员。(Static properties and methods)
+      // 如开头 this.name = name 等，是再构造函数内部为实例对象准备的成员，称为实例成员。(Instance properties and methods)
+
+      // 实例对象可以访问实例成员：
+      console.log(p1.uname) // Nicolas Cage
+
+      // 实例对象不可以访问静态成员：
+      console.log(p1.language) // undefined
+
+      // 构造函数可以访问静态成员：
+      console.log(Star.language) // English
+
+      // 构造函数不可以访问实例成员
+      console.log(Star.uname) //undefined
+
+      // 总结：
+      // 实例对象只能访问实例成员
+      // 构造函数只能访问静态成员
+    </script>
+  </body>
+</html>
