@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+    </ul>
+    <script>
+      // 静态方法
+
+      // Array.isArray(): 判断一个值是否为数组
+      let a = 3
+      console.log(Array.isArray(a)) // false
+      let b = [1, 2, 3]
+      console.log(Array.isArray(b)) //  true
+
+      // Array.from(伪数组)
+      // 把伪数组转换成真数组
+      // 伪数组，即 arrayLike，也称为类数组。是一种按照索引存储数据且具有 length 属性的对象。
+      // 因为是对象，所以不能调用数组的方法，比如 forEach()、push() 等。
+      let o = {
+        0: 'a',
+        1: 'b',
+        2: 'c',
+        3: 'd',
+        4: 'e',
+        5: 'f',
+        6: 'h',
+        length: 7, // 必须加length属性，才能成功转换成真数组。
+        // length 如果少写了，就只转写的几个，如果多写了，剩下的元素就是undefined。
+      }
+      // o.pop() //o.pop is not a function
+      let array = Array.from(o)
+      console.log(o) // {0: 'a', 1: 'b', 2: 'c', 3: 'd', 4: 'e', 5: 'f', 6: 'h', length: 7}
+      console.log(array) // ['a', 'b', 'c', 'd', 'e', 'f', 'h']
+      console.log(array.pop()) // h
+
+      // Array.from(伪数组) 的应用：
+      let lis = document.querySelectorAll('li') // 获取到了伪数组
+      console.log(lis) // NodeList(10) [li, li, li, li, li, li, li, li, li, li]
+      let newLis = Array.from(lis)
+      newLis.pop()
+      console.log(newLis) // (9) [li, li, li, li, li, li, li, li, li]
+
+      function fn() {
+        console.log(arguments) // arguments 是伪数组，获取到了所有的形参。
+        let newArray = Array.from(arguments)
+        newArray.pop()
+        console.log(newArray) // [1, 2, 3, 4]
+      }
+      fn(1, 2, 3, 4, 5)
+    </script>
+  </body>
+</html>
