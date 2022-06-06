@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // Reference Types-Object
+      // 引用数据类型-对象
+
+      // Object 是内置的构造函数，用于创建普通对象。
+      let obj = new Object({ uname: 'Tom', age: 30, sex: 'male' })
+      console.log(obj) // {uname: 'Tom', age: 30, sex: 'male'}
+
+      // Object.keys() 静态方法，用来获取对象的所有的键，返回的是数组。
+      let re = Object.keys(obj)
+      console.log(re) // ['uname', 'age', 'sex']
+
+      // Object.values() 静态方法，用来获取对象的所有的值，返回的是数组。
+      let re1 = Object.values(obj)
+      console.log(re1) // ['Tom', 30, 'male']
+    </script>
+  </body>
+</html>
