@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // forEach(): 用于遍历数组
+      let arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+      arr.forEach(function (element, index, array) {
+        // console.log(element) // 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'
+        // console.log(index) // 0, 1, 2, 3, 4, 5, 6, 7
+        console.log(`${index}:${element}`)
+        // console.log(array) // ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+      })
+
+      let array = [
+        { uname: 'Tom', age: 22, sex: 'male' },
+        { uname: 'Jack', age: 23, sex: 'male' },
+        { uname: 'Rose', age: 24, sex: 'female' },
+        { uname: 'John', age: 21, sex: 'male' },
+        { uname: 'Joe', age: 12, sex: 'male' },
+        { uname: 'Lily', age: 18, sex: 'female' },
+      ]
+      array.forEach((item) => console.log(item))
+      array.forEach((item) =>
+        console.log(`Name:${item.uname}, Age:${item.age}, Gender:${item.sex}`)
+      )
+
+      // find(): 用于查找首次出现满足条件的值，并返回元素的值。
+      let num = [2, 6, 4, 7, 9, 3].find(function (element, index, array) {
+        return element > 5
+      })
+      console.log(num) // 6
+
+      // findIndex(): 用于查找首次出现满足条件的值，并返回所在的索引值。
+      let index = [2, 6, 4, 7, 9, 3].findIndex(function (
+        element,
+        index,
+        array
+      ) {
+        return element > 5
+      })
+      console.log(index) // 1
+
+      // some(): 用于查找如果有一个满足条件,并返回true或者false。
+      let result = [2, 6, 4, 7, 9, 3].some(function (element, index, array) {
+        return element > 5
+      })
+      console.log(result) // true
+
+      // every(): 用于查找全满足条件的元素，并返回true或者false。
+      let answer = [2, 6, 4, 7, 9, 3].every(function (element, index, array) {
+        return element > 5
+        // return element > 1  // return ture
+      })
+      console.log(answer) // false
+
+      // filter(): 筛选数组，把满足条件的元素放到新数组，并返回新数组。
+      let filtered = [2, 6, 4, 7, 9, 3].filter(function (
+        element,
+        index,
+        array
+      ) {
+        return element > 5
+      })
+      console.log(filtered) //[6, 7, 9]
+
+      // map(): 遍历数组，让每一个元素执行一遍回调函数，把所有结果放到新数组，并返回新数组。
+      let mapped = [2, 6, 4, 7, 9, 3].map(function (element, index, array) {
+        return element * element
+      })
+      console.log(mapped) // [4, 36, 16, 49, 81, 9]
+    </script>
+  </body>
+</html>
