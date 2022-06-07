@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Packing Type Object
+      // 包装类型对象
+      // 正常情况下，只有对象(数组)这种复杂数据类型才有属性和方法。
+      // 按正常逻辑下 string 这种简单数据类型没有属性方法，之所以具有方法的原因是JS底层使用 Object 构造函数包装来的。
+
+      let str = 'abc'
+      // let str = new String('abc')
+      console.log(str)
+      console.log(str.length)
+      console.log(str.replace('b', 'c'))
+      // 在调用方法的一瞬间，就会把 str 包装成复杂数据类型，调用完毕后，str 仍然是一个简单数据类型。
+    </script>
+  </body>
+</html>

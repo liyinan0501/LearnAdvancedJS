@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let str =
+        'file:\\C:\\Users\\laogou\\Desktop\\JavaScript高级\\day3\\index.html'
+      // 因为有 \，需要转义符 \ 所以就 \\ 两个
+      // let dian = str.lastIndexOf('.');
+      let gang = str.lastIndexOf('\\')
+      // 截取：
+      // let wjm = str.substring(gang+1, dian);
+      // let hzm = str.substr(dian+1);
+      let last = str.substr(gang + 1)
+      let arr = last.split('.')
+      console.log(arr) // ['index', 'html']
+    </script>
+  </body>
+</html>

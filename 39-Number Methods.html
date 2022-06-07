@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Number Methods
+
+      // 1. Number literal
+      let num = 66
+
+      // 2. Number constructor
+      let num1 = new Number(66)
+      console.log(num) // 66
+      console.log(num1) // Number {66}
+      // 本质上都是数字
+
+      // toFixed(number): 用于保留几位小数，不改变原数字，返回新数字。
+      let price = 66.55555
+      console.log(price.toFixed(2)) // 66.56
+      console.log(price) // 66.55555
+
+      // parseInt, parseFloat => ES6 改为Number静态方法的
+      let number = 66.123
+      console.log(Number.parseInt(number)) //66
+      console.log(Number.parseFloat(number))
+    </script>
+  </body>
+</html>

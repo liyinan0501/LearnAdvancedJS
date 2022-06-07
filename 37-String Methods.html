@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // String Methods
+
+      // 1. String literal (recommended)
+      // let str = 'abcd'
+
+      // 2. String constructor
+      // let st1 = new String('abcd')
+
+      // 字符串其实和数组很相似
+      let str = 'abcdefg'
+      // 属性：length
+      console.log(str.length)
+      // 有索引值
+      // console.log(str[0]) //a
+      for (let i = 0; i < str.length; i++) {
+        console.log(str[i])
+      }
+
+      // trim(): 用于去除首尾两端空格，不改变原来字符串，返回新的字符串。
+      let str1 = '      abc    defg      '
+      console.log(str1) //'       abc    defg      '
+      console.log(str1.trim()) // 'abc    defg'
+
+      // split(): 用于分割，不改变原来字符串，返回新的数组。
+      let str2 = 'abcdefgabcd'
+      console.log(str2) // abcdefgabcd
+      console.log(str2.split('c')) // ['ab', 'defgab', 'd']
+      console.log(str2.split('')) // ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'a', 'b', 'c', 'd']
+
+      // toLowerCase(): 用于把大写转换成小写, 不改变原来字符串，返回新的字符串。
+      let str3 = 'abcdeFGabcd'
+      console.log(str3) // abcdeFGabcd
+      console.log(str3.toLowerCase()) // abcdefgabcd
+
+      // toUpperCase(): 用于把小写转换成大写, 不改变原来字符串，返回新的字符串。
+      console.log(str3.toUpperCase()) // ABCDEFGABCD
+      console.log(str3) // abcdeFGabcd
+
+      // indexOf(): 查找某个元素首次出现的索引值，找不到返回-1。
+      console.log(str3.indexOf('b')) // 1
+
+      // lastIndexOf(): 查找某个元素尾次出现的索引值，找不到返回-1。
+      console.log(str3.lastIndexOf('b')) // 8
+
+      // slice(start, end): 字符串截取, 从start索引值位置截取字符串，截取到end索引值位置，不改变原来字符串，返回新的字符串。
+      // 注意 end 位置取不到
+      // 注意 如果只填一个参数，那么从这个索引值位置开始一直截取到最后。
+      console.log(str3.slice(2, -1)) // cdeFGabc
+      console.log(str3.slice(2, 9)) // cdeFGab
+
+      // substring(start, end):字符串截取, 从start索引值位置截取字符串，截取到end索引值位置，不改变原来字符串，返回新的字符串。
+      // 注意 end 位置取不到
+      // 注意 如果只填一个参数，那么从这个索引值位置开始一直截取到最后。
+      // 与slice区别是：substring 会把大的数字自动放到end位置。
+      console.log(str3.substring(2, -1)) // ab
+      console.log(str3.substring(2, 9)) //cdeFGab
+      console.log(str3.substring(1, 4)) // bcd
+      console.log(str3.substring(4, 1)) // bcd
+
+      // substr(start, length): 字符串截取，从start索引值位置截取字符串，截取length个，不改变原来字符串，返回新的字符串。
+      console.log(str3.substr(1, 3)) // bcd
+    </script>
+  </body>
+</html>
