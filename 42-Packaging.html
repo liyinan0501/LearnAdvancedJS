@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 面向对象
+      // 面向对象编程，具有三个显著体征：封装、继承、多态。
+
+      // 封装 Packaging
+      // 命名空间封装：
+      let obj = {
+        uname: 'Tom',
+        age: 22,
+      }
+      let obj1 = {
+        uname: 'Jack',
+        age: 23,
+      }
+      // 构造函数封装：当做模板
+      // 把公共的属性和方法放到构造函数当中。
+      // 1. 创建模板
+      function Person(uname, age, height, weight) {
+        this.uname = uname
+        this.age = age
+        this.height = height
+        this.weight = weight
+        this.eat = function () {
+          console.log('Eating')
+        }
+        this.sleep = function () {
+          console.log('Sleeping')
+        }
+      }
+      // 2. 实例化
+      let p1 = new Person('Joe', 29, '90kg', '190cm')
+      // 添加个例的属性和方法：
+      p1.habbit = 'Playing Computer'
+      p1.play = function () {
+        console.log('Playing Computer Games')
+      }
+      console.log(p1) // Person {uname: 'Joe', age: 29, height: '90kg', weight: '190cm', habbit: "Playing Computer", eat: ƒ, …}
+      p1.play() // Playing Computer Games
+      p1.uname = 'Joeeee'
+      console.log(p1) // // Person {uname: 'Joeeee', age: 29, height: '90kg', weight: '190cm', habbit: "Playing Computer", eat: ƒ, …}
+      // 更改不会影响其他对象，例如不会影响 p2。
+      let p2 = new Person('Rose', 19, '60kg', '170cm')
+      console.log(p2) // Person {uname: 'Rose', age: 19, height: '60kg', weight: '170cm', eat: ƒ, …}
+    </script>
+  </body>
+</html>
