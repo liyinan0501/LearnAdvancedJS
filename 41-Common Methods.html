@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Common Methods
+
+      // Reference Types and Packing Types
+      // Common methods are toString() and valueOf()
+
+      // toString(): 转为字符串
+      let num = 123
+      console.log(num.toString())
+      let flag = true
+      console.log(flag.toString())
+      // undefined 和 null 不可以使用toString()
+      // console.log(undefined.toString()) // Cannot read properties of undefined (reading 'toString')
+      // console.log(null.toString()) // Cannot read properties of null (reading 'toString')
+
+      // valueOf: 用于获取原始值
+      let num1 = new Number(666)
+      console.log(num1) // Number {666}
+      console.log(num1.valueOf()) // 666
+      let flag1 = new Boolean(true)
+      console.log(flag1) // Boolean {true}
+      console.log(flag1.valueOf()) // true
+      let date = new Date()
+      console.log(date) // Wed Jun 08 2022 12:22:36 GMT+0300 (Eastern European Summer Time)
+      console.log(date.valueOf()) // 1654680166266 (时间戳)
+      // undefined 和 null 不可以使用valueOf()
+      // console.log(undefined.valueOf()) // Cannot read properties of undefined (reading 'valueOf')
+      // console.log(null.valueOf()) // Cannot read properties of null (reading 'valueOf')
+    </script>
+  </body>
+</html>
