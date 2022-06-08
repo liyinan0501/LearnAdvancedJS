@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // prototype
+      function Person(uname, age) {
+        this.uname = uname
+        this.age = age
+
+        this.sing = function () {
+          console.log('Singing-from constructor')
+        }
+      }
+      // 每一个函数都有一个属性：prototype，这个属性指向了一个对象，称为原型对象或原型。
+      // 作用：共享方法，节省内存，当实例对象找不到成员的时候就会找原型对象上的成员方法，进行调用。
+      Person.prototype.sing = function () {
+        console.log('Singing-from prototype')
+      }
+      console.log(Person.prototype)
+
+      let p1 = new Person('Tom', 28)
+      p1.sing()
+      // 当构造函数自己身上有就会调用自己身上的函数，如果没有就从prototype上找，找到后进行调用。
+    </script>
+  </body>
+</html>

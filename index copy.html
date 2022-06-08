@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function People() {
+        this.head = 1
+        this.eyes = 2
+        this.legs = 2
+        this.height = 'height'
+        this.weight = 'weight'
+
+        this.say = function () {
+          console.log('Saying')
+        }
+        this.eat = function () {
+          console.log('Eating')
+        }
+        this.walk = function () {
+          console.log('Walking')
+        }
+      }
+
+      function Star() {
+        this.makeup = 'Makeup'
+        this.money = '$$$$'
+      }
+      Star.prototype = new People()
+      Star.prototype.constructor = Star
+      let nk = new Star()
+      console.log(nk)
+
+      function Athlete() {
+        this.strong = 'strong'
+        this.talent = 'talent'
+      }
+      Athlete.prototype = new People()
+      Athlete.prototype.constructor = Athlete
+      let kobe = new Athlete()
+      console.log(kobe)
+    </script>
+  </body>
+</html>

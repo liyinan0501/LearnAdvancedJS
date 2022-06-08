@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Inheritance
+
+      // let obj = {
+      //   head: 1,
+      //   eyes: 2,
+      //   legs: 2,
+      //   say: function () {
+      //     console.log('Saying')
+      //   },
+      //   eat: function () {
+      //     console.log('Eating')
+      //   },
+      // }
+
+      // 把 obj 改为构造函数
+      function Person() {
+        this.head = 1
+        this.eyes = 2
+        this.legs = 2
+        this.say = function () {
+          console.log('Saying')
+        }
+        this.eat = function () {
+          console.log('Eating')
+        }
+      }
+
+      function Chinese() {
+        this.language = 'Chinese'
+        this.skin = 'Yellow'
+      }
+      // 继承：(两步)
+      // 1. 把对象赋值给原型对象
+      Chinese.prototype = new Person()
+      // 直接覆盖prototype，导致原本的prototype里的constructor被覆盖掉了,需要加回。
+      // 2. 加回constructor指向
+      Chinese.prototype.constructor = Chinese
+      // console.log(Chinese.prototype)
+      let c1 = new Chinese()
+      console.log(c1)
+
+      //---------------------------------------------------------------------------
+
+      function Japanese() {
+        this.language = 'Japanese'
+        this.skin = 'Yello'
+      }
+      // 继承：(两步)
+      // 1. 把对象赋值给原型对象
+      Japanese.prototype = new Person()
+      // 直接覆盖prototype，导致原本的prototype里的constructor被覆盖掉了,需要加回。
+      // 2. 加回constructor指向
+      Japanese.prototype.constructor = Japanese
+      let j1 = new Japanese()
+      console.log(j1)
+    </script>
+  </body>
+</html>

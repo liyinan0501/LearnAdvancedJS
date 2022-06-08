@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // __proto__
+
+      // 构造函数
+      function Person(uname, age) {
+        this.uname = uname
+        this.age = age
+      }
+
+      // 原型对象
+      Person.prototype.eat = function () {
+        console.log('Eating')
+      }
+
+      // 实例对象
+      let p1 = new Person('Jack', 22)
+
+      // __proto__ 对象原型 （隐式原型）= [[Prototype]]
+      // prototype 原型对象 （显式原型）
+      // 每个对象都有一个属性：__proto__ (非标准属性，不要设置，不要赋值)
+      // 对象找不到成员就会沿着 __proto__ 上找
+      // 作用：用于指向原型对象，也就是指向构造函数的prototype。
+      console.log(p1)
+      console.log(p1.__proto__)
+      console.log(Person.prototype)
+      console.log(p1.__proto__ === Person.prototype)
+    </script>
+  </body>
+</html>

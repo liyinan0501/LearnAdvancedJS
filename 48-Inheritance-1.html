@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Inheritance
+      let obj = {
+        head: 1,
+        eyes: 2,
+        legs: 2,
+        say: function () {
+          console.log('Saying')
+        },
+        eat: function () {
+          console.log('Eating')
+        },
+      }
+
+      function Chinese() {
+        this.language = 'Chinese'
+        this.skin = 'Yellow'
+      }
+      // 继承：(两步)
+      // 1. 对象赋给原型对象
+      Chinese.prototype = obj
+      // 直接覆盖prototype，导致原本的prototype里的constructor被覆盖掉了,需要加回。
+      // 2. 加回constructor指向
+      Chinese.prototype.constructor = Chinese
+      let c1 = new Chinese()
+      console.log(Chinese.prototype)
+      console.log(c1)
+
+      function Japanese() {
+        this.language = 'Japanese'
+        this.skin = 'Yello'
+      }
+      Japanese.prototype = obj
+      // obj 地址再次给了prototype，导致影响到Chinese的prototype的constructor也指向了Japanese。
+      Japanese.prototype.constructor = Japanese
+      let j1 = new Japanese()
+      console.log(j1)
+    </script>
+  </body>
+</html>

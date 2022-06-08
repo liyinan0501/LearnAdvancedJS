@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Packaging-Constructor
+      function Star(uname, age) {
+        this.uname = uname
+        this.age = age
+        // 函数是复杂类型，需要再stack内存中保存地址，在heap内存中保存数据。
+        this.sing = function () {
+          console.log('Singing')
+        }
+        this.eat = function () {
+          console.log('Eating')
+        }
+      }
+      let s1 = new Star('Mikki', 23) // 新实例有sing的函数
+      console.log(s1)
+      let s2 = new Star('Plento', 18) // 另一个新实例也有sing的函数
+      console.log(s2)
+      // 两个实例都有相同重复的sing,eat函数，两个相同重复的函数都在heap内存中保存，导致在heap内存中浪费资源。
+      // 需要一个方法，在另一个空间只存一份eat和sing函数。
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // prototype
+      function Person(uname, age) {
+        this.uname = uname
+        this.age = age
+
+        // this.sing = function () {
+        //   console.log('Singing')
+        // }
+      }
+
+      // 原型对象：就是构造函数（函数）的属性, prototype，
+      // 构造函数的prototype属性指向一个对象，这个对象称为原型对象或者原型。
+      console.log(Person.prototype)
+      // 作用：存储共享方法，节省内存。
+      Person.prototype.sing = function () {
+        console.log('Singing')
+      }
+      console.log(Person.prototype) // 深色的sing代表是认为加上去的
+
+      let p1 = new Person('Jack', 23)
+      console.log(p1)
+      p1.sing() // Singing
+    </script>
+  </body>
+</html>

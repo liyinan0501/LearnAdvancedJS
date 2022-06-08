@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // prototype.constructor
+      // 每个构造函数都有一个prototype属性，每一个prototype属性都有一个constructor，用于指回构造函数本身。
+      // 为什么有constructor，因为能在众多构造函数中，认识出是哪个构造函数的prototype。
+      function Person() {}
+      console.log(Person.prototype)
+      // constructor: ƒ Person() 用于指回构造函数本身
+      console.log(Person.prototype.constructor)
+
+      function Dog() {}
+      console.log(Dog.prototype)
+      console.log(Dog.prototype.constructor)
+
+      let p1 = new Person()
+      console.log(p1)
+      console.log(p1.constructor)
+    </script>
+  </body>
+</html>
