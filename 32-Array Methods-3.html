@@ -60,6 +60,7 @@
       console.log(answer) // false
 
       // filter(): 筛选数组，把满足条件的元素放到新数组，并返回新数组。
+      // filter是满足条件的留下，是对原数组的过滤。
       let filtered = [2, 6, 4, 7, 9, 3].filter(function (
         element,
         index,
@@ -70,6 +71,7 @@
       console.log(filtered) //[6, 7, 9]
 
       // map(): 遍历数组，让每一个元素执行一遍回调函数，把所有结果放到新数组，并返回新数组。
+      // map则是对原数组的加工，映射成一对一的。
       let mapped = [2, 6, 4, 7, 9, 3].map(function (element, index, array) {
         return element * element
       })
