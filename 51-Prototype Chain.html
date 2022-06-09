@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Prototype Chain
+
+      // 原型链：由原型构成的链状结构
+      function Person(uname, age) {
+        this.uname = uname
+        this.age = age
+      }
+      Person.prototype.eat = function () {
+        console.log('Eating')
+      }
+      Object.prototype.play = function () {
+        console.log('Playing')
+      }
+      let p1 = new Person('Tom', 22)
+      console.log(p1.__proto__.__proto__.constructor)
+      // p1.__proto__: Person
+      // p1.__proto__.__proto__: Object
+      // p1.__proto__.__proto__.__proto__: null
+      p1.play()
+    </script>
+  </body>
+</html>
