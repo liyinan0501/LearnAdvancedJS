@@ -22,7 +22,32 @@
       }
       fn()
 
-      // 2. 构造函数
+      // 2. 箭头函数
+      // 不受调用者影响，事实上箭头函数并不存在this。
+      // 即使箭头函数中访问this，不过是箭头函数所在作用域的this，也就是父作用域。
+      // window.setInterval(() => {
+      //   console.log(this) // 指向上级作用域window
+      // }, 1000)
+
+      document.addEventListener('click', function () {
+        window.setInterval(() => {
+          console.log(this) // 指向上级作用域document
+        }, 1000)
+      })
+
+      // 注意：
+      // 事件处理函数，涉及this，不要使用箭头函数。
+      document.addEventListener('click', () => {
+        console.log(this) // 指向上级作用域window
+      })
+      // 构造函数，不要使用箭头函数。
+      let Person = (uname, age) => {
+        this.uname = uname
+        this.age = age
+      }
+      new Person()
+
+      // 3. 构造函数
       // new 调用， this 指向实例化对象。（调用者）
       function Person(uname, age) {
         this.uname = uname
@@ -34,7 +59,7 @@
       let p2 = new Person('Rose', 18)
       console.log(p2)
 
-      // 3. 方法
+      // 4. 方法
       // obj 调用， this 指向 obj 本身。（调用者）
       let obj = {
         uname: 'Jack',
@@ -45,19 +70,19 @@
       }
       obj.fly()
 
-      // 4. 事件处理函数
+      // 5. 事件处理函数
       // 事件源调用，this 指向事件源。
       document.addEventListener('click', function () {
         console.log(this)
       })
 
-      // 5. 定时器
+      // 6. 定时器
       // window 调用，this 指向 window。（调用者）
       // window.setInterval(function () {
       //   console.log(this)
       // }, 1000)
 
-      // 6. 自调用函数
+      // 7. 自调用函数
       // window 调用，this 指向 window。（调用者）
       !(function () {
         console.log(this)
