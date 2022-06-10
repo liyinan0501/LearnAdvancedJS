@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // String-Ex
+      let str = '132642343739373635384628633124'
+      let obj = {}
+
+      for (let i = 0; i < str.length; i++) {
+        if (obj[str[i]]) {
+          obj[str[i]]++
+        } else {
+          obj[str[i]] = 1
+        }
+      }
+      console.log(obj)
+
+      let max = 0
+      let count = 0
+      for (let key in obj) {
+        if (count < obj[key]) {
+          count = obj[key]
+          max = key
+        }
+      }
+      console.log(max, count)
+    </script>
+  </body>
+</html>

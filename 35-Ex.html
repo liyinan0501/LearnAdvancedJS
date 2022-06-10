@@ -108,10 +108,27 @@
       //     3 : 6,
       // }
       let str = '132642343739373635384628633124'
-      let newArray = str.split('')
-      let result = {}
-      console.log(newArray)
-      newArray.forEach(item)
+      let obj = {}
+      for (let i = 0; i < str.length; i++) {
+        // obj.xxx (固定) obj['xxx'](非固定)
+        // if 里面应是布尔值，如果obj[str[i]]存在，返回一个非零的数字，也就是true。
+        if (obj[str[i]]) {
+          obj[str[i]]++
+        } else {
+          obj[str[i]] = 1
+        }
+      }
+      console.log(obj)
+      // get Max
+      let mx = 1
+      let count = obj['1']
+      for (let key in obj) {
+        if (count < obj[key]) {
+          count = obj[key]
+          mx = key
+        }
+      }
+      console.log(`${mx}:${count}`)
     </script>
   </body>
 </html>
