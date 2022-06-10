@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 改变 this 指向
+
+      function fn(a, b) {
+        console.log(this, a, b)
+      }
+      let obj = { uname: 'Tom' }
+
+      //函数方法：
+      // 1. 函数.call(this指向, arg1, arg2,...传参)
+      // 如果函数调用了call的话，不但会改变this的指向，还会调用函数执行。
+      // 不要用fn加上()，没有return的话，返回值为undefined，也就是undefined.call(obj)。
+      fn.call(obj, 1, 2) // {uname: 'Tom'} 1 2
+      fn(1, 2) // Window {}
+      // 调用call后，还会恢复this 的指向。
+
+      let p1 = {
+        uname: 'Jack',
+        age: 22,
+        fly: function () {
+          console.log(this)
+        },
+      }
+      let p2 = {
+        uname: 'Joe',
+        age: 28,
+      }
+      p1.fly() // this 指向 p1 调用者， {uname: 'Jack', age: 22, fly: ƒ}
+      //对象.方法.call
+      p1.fly.call(p2) // 改变this指向，指向到{uname: 'Joe', age: 28}
+    </script>
+  </body>
+</html>

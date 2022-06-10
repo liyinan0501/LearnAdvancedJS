@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // apply()
+      // 函数.apply(this指向, [arg1, arg2,...])
+      function fn(a, b) {
+        console.log(this, a, b)
+      }
+      let obj = { uname: 'Tom' }
+      fn.apply(obj, [1, 2]) // {uname: 'Tom'} 1 2
+
+      let p1 = {
+        uname: 'Jack',
+        age: 22,
+        fly: function () {
+          console.log(this)
+        },
+      }
+      let p2 = {
+        uname: 'Joe',
+        age: 28,
+      }
+      p1.fly.apply(p2) // {uname: 'Joe', age: 28}
+
+      // apply 第二个参数是数组，和数组一起用比较方便
+      let arr = [23, 66, 33, 19, 4, 7]
+      // Math.max(23, 66, 33, 19, 4, 7)
+      // 可以借助apply 把数组传递给max函数。
+      console.log(Math.max.apply(null, arr))
+
+      let arr1 = [23, 66, 33, 19, 4, 7]
+      // Math.max(23, 66, 33, 19, 4, 7)
+      // ...
+      // 1. ...rest参数：剩余参数，用于函数解构，赋值。
+      // 2. ...扩展运算符：在数组、字符串、对象中使用...，...就是扩展运算符。
+      console.log(...arr1) // 23 66 33 19 4 7
+      console.log(...'abcd') //a b c d
+      console.log(Math.max(...arr)) // 66
+    </script>
+  </body>
+</html>
