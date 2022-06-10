@@ -16,6 +16,7 @@
 
       // 1. 普通函数
       // 全局调用，this 指向 window。（调用者）
+      // 严格模式下，this 指向 undefined。
       function fn() {
         console.log(this)
       }

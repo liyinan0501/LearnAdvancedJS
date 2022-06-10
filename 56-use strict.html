@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      'use strict'
+
+      // Strict Mode
+      // 写代码要求更严格，为了与新版本更容易结合。
+
+      // 开启严格模式：
+      // 必须放到作用域的第一句话，否则失效。
+      // 'use strict' 如果放到全局的开头，代表全局都要严格模式。
+      // 'use strict' 如果放到函数里的开头，代表这个函数内部严格，其他地方不严格。
+      // n = 2
+      // console.log(n) // 严格模式下会报错，没有遵循先定义后使用的原则。
+
+      // 1. 变量必须先定义再使用，不准删除变量（delete n）。
+      // 2. 普通函数中 this 指向 undefined。
+      function fn() {
+        console.log(this) // undefined
+      }
+      fn()
+      // 3. 函数形参 parameter 不准重名。
+      function fn1(a, a) {
+        return a + a
+      }
+      fn1(1, 2) // uplicate parameter name not allowed in this context
+    </script>
+  </body>
+</html>
