@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // class constructor
+      class Person {
+        head = 1
+        legs = 2
+        uname = 'Tom'
+        age = 22
+      }
+      let obj = new Person()
+      console.log(obj) // Person {head: 1, legs: 2, uname: 'Tom', age: 22}
+      let obj1 = new Person()
+      console.log(obj1) // Person {head: 1, legs: 2, uname: 'Tom', age: 22}
+      // 导致所有实例的姓名和年龄都一样，实例化没有意义，因此需要一个初始化工具-构造器。
+
+      // constructor:
+      // 是一个特殊的方法，如果不写，那么会自动创建这个构造方法，这个constructor在实例化对象的时候就会执行。
+      // 作用：
+      // 通常constructor 用于接收参数，进行初始化操作。
+      // class People {
+      //   constructor() {
+      //     console.log(123)
+      //   }
+      //   say() {
+      //     console.log('Saying')
+      //   }
+      //   run() {
+      //     console.log('Running')
+      //   }
+      // }
+      // let p1 = new People() // 123
+      // new 的时候直接打印123，意味着new的时候自动执行constructor。
+
+      class People {
+        constructor(uname, age) {
+          this.uname = uname
+          this.age = age
+        }
+        say() {
+          console.log('Saying')
+        }
+        run() {
+          console.log('Running')
+        }
+      }
+
+      let p1 = new People('Rose', 13)
+      console.log(p1) // People {uname: 'Rose', age: 13}
+    </script>
+  </body>
+</html>

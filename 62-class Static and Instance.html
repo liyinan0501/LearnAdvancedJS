@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // class Static and Instance
+      class Dog {
+        static color = 'yellow'
+        static leg = 4
+
+        // Dog 上放属性
+        breed = 'Golden Retriever'
+        age = 3
+
+        static woof() {
+          console.log('Woof, Woof')
+        }
+        // 直接会在原型对象prototype放方法
+        running() {
+          console.log('Running')
+        }
+      }
+      let d1 = new Dog()
+      console.log(d1)
+    </script>
+  </body>
+</html>
