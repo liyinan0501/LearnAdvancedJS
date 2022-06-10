@@ -10,7 +10,46 @@
     <script>
       // Shallow Copy and Deep Copy
       // 浅层拷贝 和 深度拷贝
-      // 深度拷贝
+      // 深度拷贝:
+
+      let obj = {
+        uname: 'Joe',
+        age: 22,
+        sex: 'Male',
+        color: ['red', 'blue', 'yellow', 'pink'],
+        message: {
+          index: 6,
+          score: 99,
+        },
+      }
+      let newObj = {}
+
+      // 深度拷贝:
+      // 如果遇到obj[key]是复杂类型，再次遍历操作。
+      // for (let key in obj) {
+      //   newObj[key] = obj[key]
+      // }
+      function deepCopy(newObj, obj) {
+        for (let key in obj) {
+          if (obj[key] instanceof Array) {
+            newObj[key] = []
+            // 遍历
+            deepCopy(newObj[key], obj[key])
+          } else if (obj[key] instanceof Object) {
+            newObj[key] = {}
+            // 遍历
+            deepCopy(newObj[key], obj[key])
+          } else {
+            newObj[key] = obj[key]
+          }
+        }
+      }
+      deepCopy(newObj, obj)
+      newObj.message.index = 6666
+      console.log(newObj, obj)
+
+      // 深度拷贝方法:
+      // lodash
     </script>
   </body>
 </html>
