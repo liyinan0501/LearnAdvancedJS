@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // class nature
+      // 类的本质
+
+      // ES6 之前，用函数创建对象。
+      // function Person() {}
+      // let p = new Person()
+
+      // ES6 之后，用类创建对象。
+      class Person {}
+      let p = new Person()
+
+      // 类的本质：函数
+      console.log(typeof Person) //function
+      console.log(Person.prototype)
+      console.log(Person.prototype === p.__proto__) // true
+
+      // Syntactic sugar 语法糖 🍬
+      // 类的写法是函数写法的语法糖 🍬
+      // let j = 1
+      // j++ 是 j = j + 1 的语法糖 🍬
+    </script>
+  </body>
+</html>

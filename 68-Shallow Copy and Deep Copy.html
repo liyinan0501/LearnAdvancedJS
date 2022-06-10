@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Shallow Copy and Deep Copy
+      // 浅层拷贝 和 深度拷贝
+      // 浅层拷贝:
+
+      let obj = {
+        uname: 'Joe',
+        age: 22,
+        sex: 'Male',
+        color: ['red', 'blue', 'yellow', 'pink'],
+        message: {
+          index: 6,
+          score: 99,
+        },
+      }
+      let newObj = {}
+      // newObj = obj // 只是把地址传过去了
+
+      // newObj.uname = obj.uname
+      // newObj.age = obj.age
+      // newObj.sex = obj.sex
+      // obj.uname = 'aaa'
+      // console.log(obj, newObj) // {uname: 'aaa', age: 22, sex: 'Male'} {uname: 'Joe', age: 22, sex: 'Male'}
+
+      // 浅层拷贝 ：
+      // 只拷贝外面一层，message 对象里面的还是用了地址拷贝，没拷贝干净。
+      for (let key in obj) {
+        newObj[key] = obj[key]
+      }
+      obj.uname = 'aaa'
+      console.log(obj, newObj) // {uname: 'aaa', age: 22, sex: 'Male'} {uname: 'Joe', age: 22, sex: 'Male'}
+      // 如果对象里面又套了一层对象的话，之前的copy 也就是失败了：
+      obj.message.index = 66666 // 改了obj 同样newObj的index 也改了
+      console.log(obj, newObj) // message: {index: 66666, score: 99} message: {index: 66666, score: 99}
+
+      // 浅层拷贝方法：
+      let newObj1 = {}
+      Object.assign(newObj1, obj)
+      console.log(newObj1, obj)
+    </script>
+  </body>
+</html>

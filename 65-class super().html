@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // class super()
+
+      class Father {
+        constructor(uname, age) {
+          this.uname = uname
+          this.age = age
+        }
+        makingMoney() {
+          console.log('Making 1 billion dollars')
+        }
+      }
+      class Son extends Father {
+        // 如果子类有自己的constructor，必须通过supper才可以调用父类的方法。
+        constructor(uname, age, score) {
+          // 先调用super，再设定自己的成员。
+          super(uname, age)
+          this.score = score
+        }
+        makingMoney() {
+          super.makingMoney() // 调用父类相同命名的方法
+          console.log('Making an half billion dollars')
+        }
+      }
+      let obj = new Son('Luis', 13, 99)
+      console.log(obj) // {uname: 'Luis', age: 13, score: 99}
+      obj.makingMoney() // 就近原则 调用自己的 Making an half billion dollars
+    </script>
+  </body>
+</html>

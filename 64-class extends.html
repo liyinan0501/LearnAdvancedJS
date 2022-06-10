@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // class extends
+      class Father {
+        constructor(uname, age) {
+          this.uname = uname
+          this.age = age
+        }
+        makingMoney() {
+          console.log('Making 1 billion dollars')
+        }
+      }
+      // class Son {
+      //   constructor(uname, age) {
+      //     this.uname = uname
+      //     this.age = age
+      //   }
+      //   makingMoney() {
+      //     console.log('Making a half billion dollars')
+      //   }
+      // }
+      class Son extends Father {}
+      let obj = new Son('Joe', 13)
+      console.log(obj) // Son {uname: 'Joe', age: 13}
+      obj.makingMoney() // Making 1 billion dollars
+    </script>
+  </body>
+</html>
