@@ -34,9 +34,9 @@
         uname: 'Joe',
         age: 28,
       }
-      p1.fly() // this 指向 p1 调用者， {uname: 'Jack', age: 22, fly: ƒ}
+      p1.fly() // this 指向 p1 调用者， 也就是 {uname: 'Jack', age: 22, fly: ƒ}。
       //对象.方法.call
-      p1.fly.call(p2) // 改变this指向，指向到{uname: 'Joe', age: 28}
+      p1.fly.call(p2) // 改变this指向，指向 {uname: 'Joe', age: 28}。
     </script>
   </body>
 </html>
