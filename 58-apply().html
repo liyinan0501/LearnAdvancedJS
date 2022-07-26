@@ -9,12 +9,14 @@
   <body>
     <script>
       // apply()
-      // 函数.apply(this指向, [arg1, arg2,...])
+      // 函数.apply (this指向, [arg1, arg2,...])
       function fn(a, b) {
         console.log(this, a, b)
       }
       let obj = { uname: 'Tom' }
       fn.apply(obj, [1, 2]) // {uname: 'Tom'} 1 2
+      fn(1, 2) // window 1 2
+      // 调用apply后，还会恢复this 的指向。
 
       let p1 = {
         uname: 'Jack',
