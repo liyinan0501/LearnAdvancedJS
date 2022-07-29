@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // promise 三个状态
+      // 1. pending 待定
+      // 2. fulfilled 成功
+      // 3. rejected 拒绝
+      // let promise = new Promise(转一个函数)
+
+      let promise = new Promise(function (resolve, reject) {
+        resolve('abc') // 一旦调用 resolve，状态就从 pending 变为 fulfilled。
+        // reject(error) // 一旦调用 reject，状态就从 pending 变为 rejected。
+      })
+      // 当改变promise的状态，也就是调用了resolve或者reject 就会触发then。
+      promise
+        .then((res) => {
+          // 只会拿到 fulfilled 状态下的数据。
+          console.log(res) // 成功 resolve
+        })
+        .catch((err) => {
+          // 如果没写catch，调用reject 会报 uncaught 错误。
+          console.log(err) // 失败 reject
+        })
+    </script>
+  </body>
+</html>

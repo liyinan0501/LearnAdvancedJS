@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 添加async 包装成了promise对象。
+      async function f1() {
+        return 'abc' // = return Promise.resolve('abc')
+      }
+      console.log(f1())
+
+      //
+      async function f3() {
+        // return 'F3'
+        return new Promise((resolve, reject) => {
+          setTimeout(() => resolve('cbd'), 2000)
+        })
+      }
+      function f4() {
+        return 'F4'
+      }
+      async function f5() {
+        let c = await f3()
+        // 过两秒执行如下：
+        console.log('following') // following
+        console.log(c) // F5
+      }
+      f5()
+
+      //
+      async function f6() {
+        return Promise.resolve('Resolved!!')
+        return Promise.reject('Rejected!!')
+      }
+      async function f7() {
+        try {
+          let result = await f6()
+          // 等来的37行是resolve，后面的代码会执行，如果等了的是reject，后面的代码不执行，直接调到catch后。
+          console.log(result) // Resolved!!
+          console.log('result following') // result following
+        } catch (e) {
+          console.log(e)
+        }
+      }
+      f7()
+    </script>
+  </body>
+</html>
