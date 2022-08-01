@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let dataArray = [
+        {
+          departure: '2021-05-31T23:05:38',
+          return: '2021-05-31T23:08:15',
+          departure_station_id: '609',
+          departure_station_name: 'Sepetlahdentie',
+          return_station_id: '607',
+          return_station_name: 'Nuottaniementie',
+          covered_distance: '665',
+          duration: '152',
+        },
+        {
+          departure: '2021-05-31T23:05:38',
+          return: '2021-05-31T23:08:15',
+          departure_station_id: '609',
+          departure_station_name: 'Sepetlahdentie',
+          return_station_id: '607',
+          return_station_name: 'Nuottaniementie',
+          covered_distance: '665',
+          duration: '152',
+        },
+        {
+          departure: '2021-05-31T23:05:22',
+          return: '2021-05-31T23:12:55',
+          departure_station_id: '239',
+          departure_station_name: 'Viikin tiedepuisto',
+          return_station_id: '240',
+          return_station_name: 'Viikin normaalikoulu',
+          covered_distance: '1403',
+          duration: '452',
+        },
+        {
+          departure: '2021-05-31T23:05:10',
+          return: '2021-05-31T23:10:25',
+          departure_station_id: '270',
+          departure_station_name: 'Tulisuontie',
+          return_station_id: '262',
+          return_station_name: 'Siilitie (M)',
+          covered_distance: '1235',
+          duration: '311',
+        },
+        {
+          departure: '2021-05-31T23:05:10',
+          return: '2021-05-31T23:10:25',
+          departure_station_id: '270',
+          departure_station_name: 'Tulisuontie',
+          return_station_id: '262',
+          return_station_name: 'Siilitie (M)',
+          covered_distance: '1235',
+          duration: '311',
+        },
+      ]
+      console.log(dataArray.length)
+
+      // Removing duplicate records
+      let tempJson = {}
+      let res = []
+
+      for (let i in dataArray) {
+        tempJson[JSON.stringify(dataArray[i])] = true
+      }
+      console.log('tempJson:', tempJson)
+      let keyItems = Object.keys(tempJson)
+      console.log('keyItems:', keyItems)
+      for (let j = 0; j < keyItems.length; j++) {
+        res.push(JSON.parse(keyItems[j]))
+      }
+    </script>
+  </body>
+</html>
