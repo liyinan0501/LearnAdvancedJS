@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1 haha heihei 3 1000 2 500
+      console.log(1) // 宏任务1的内容
+
+      setTimeout(function () {
+        console.log(2) // 宏任务2的内容
+      }, 0)
+
+      setTimeout(function () {
+        console.log(500) // 宏任务3的内容
+      }, 1000)
+
+      const p = new Promise((resolve, reject) => {
+        console.log('haha') // 宏任务1的内容
+        resolve(1000) // 宏任务1的内容
+        console.log('heihei') // 宏任务1的内容
+      })
+      // Promise 遇到 .then才是异步的开始。
+      p.then((data) => {
+        console.log(data) // 微任务1的内容
+      })
+
+      console.log(3) // 宏任务1的内容
+    </script>
+  </body>
+</html>
