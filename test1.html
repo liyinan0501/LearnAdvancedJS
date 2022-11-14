@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>test</h1>
+    <script>
+      class Friend {
+        constructor(email) {
+          this.email = email
+          this.friends = []
+        }
+
+        addFriendship(friend) {
+          this.friends.push(friend)
+          friend.friends.push(this)
+        }
+
+        canBeConnected(friend) {
+          // Your code goes here
+          for (let i = 0; i < this.friends.length; i++) {
+            if (this.friends[i] == friend) {
+              return true
+            } else {
+              this.friends[i].canBeConnected(friend)
+            }
+            return false
+          }
+
+          // for (let i = 0; i < this.friends.length; i++) {
+          //   if (this.friends[i] == friend) {
+          //     return true
+          //   }
+          //   for (let x = 0; x < this.friends[i].friends.length; x++) {
+          //     if (this.friends[i].friends[x] == friend) {
+          //       return true
+          //     }
+          //   }
+          //   return false
+          // }
+        }
+      }
+      const a = new Friend('A')
+      const b = new Friend('B')
+      const c = new Friend('C')
+
+      a.addFriendship(b)
+      b.addFriendship(c)
+
+      a.canBeConnected(c)
+      // console.log(a.canBeConnected(c))
+    </script>
+  </body>
+</html>
